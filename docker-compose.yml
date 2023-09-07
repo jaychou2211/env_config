@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  test:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+    environment:
+      - a=${a}
+      - b=${b}
+    command: node 1.js;
